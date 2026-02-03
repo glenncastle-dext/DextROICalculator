@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dext ROI Calculator | Value Assessment for Accountants & Bookkeepers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg width="100" height="40" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="32" font-family="Plus Jakarta Sans, sans-serif" font-size="36" font-weight="800" fill="#1A1A1A">Dext</text>
+                </svg>
+            </div>
+            <div class="header-badge">Value Assessment Tool</div>
+        </header>
+
+        <!-- Title Section -->
+        <section class="title-section">
+            <h1><span class="highlight">ROI</span> Calculator</h1>
+            <p class="subtitle">Discover the time and cost savings Dext can deliver for your practice. Based on ATO cost assessment methodology.</p>
+        </section>
+
+        <!-- Main Calculator -->
+        <main class="calculator-wrapper">
+            <!-- Input Panel -->
+            <section class="input-panel">
+                <!-- Invoice Processing Section -->
+                <div class="input-group invoice-section">
+                    <h2 class="section-title">
+                        <span class="section-icon">📄</span>
+                        Invoice Processing Volume
+                    </h2>
+                    
+                    <div class="input-item">
+                        <label class="input-label">
+                            Number of clients
+                            <span class="input-hint">Total clients using Dext for invoice processing</span>
+                        </label>
+                        <div class="slider-container">
+                            <input type="range" id="numClients" min="1" max="500" value="50" class="slider">
+                            <div class="input-box">
+                                <input type="number" id="numClientsValue" min="1" max="500" value="50">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-item">
+                        <label class="input-label">
+                            Invoices per client per month
+                            <span class="input-hint">Purchase invoices requiring processing (accounts payable)</span>
+                        </label>
+                        <div class="slider-container">
+                            <input type="range" id="invoicesPerClient" min="1" max="500" value="40" class="slider">
+                            <div class="input-box">
+                                <input type="number" id="invoicesPerClientValue" min="1" max="500" value="40">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Processing Time Table -->
+                <div class="input-group time-settings">
+                    <h2 class="section-title">
+                        <span class="section-icon">⏱️</span>
+                        Processing Time Per Invoice
+                    </h2>
+                    <p class="info-text">Based on ATO/Deloitte Access Economics benchmarks. Adjust times to match your practice.</p>
+                    
+                    <table class="time-table">
+                        <thead>
+                            <tr>
+                                <th class="step-column">Process Step</th>
+                                <th class="time-column">Without Dext</th>
+                                <th class="time-column with-dext">With Dext</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="step-cell">
+                                    <strong>Receipt & Data Entry</strong>
+                                    <span class="step-description">Receiving invoice, entering into accounting system</span>
+                                </td>
+                                <td class="time-cell">
+                                    <div class="time-input-wrapper">
+                                        <input type="number" id="timeReceiptWithout" min="0" max="60" step="0.5" value="7">
+                                        <span class="time-unit">min</span>
+                                    </div>
+                                </td>
+                                <td class="time-cell with-dext">
+                                    <div class="time-input-wrapper">
+                                        <input type="number" id="timeReceiptWith" min="0" max="60" step="0.5" value="1">
+                                        <span class="time-unit">min</span>
+                                    </div>
+                                    <span class="dext-note">Auto-capture, OCR ~30 sec</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="step-cell">
+                                    <strong>Validation</strong>
+                                    <span class="step-description">Verify supplier, check ABN, GST validation</span>
+                                </td>
+                                <td class="time-cell">
+                                    <div class="time-input-wrapper">
+                                        <input type="number" id="timeValidationWithout" min="0" max="60" step="0.5" value="2">
+                                        <span class="time-unit">min</span>
+                                    </div>
+                                </td>
+                                <td class="time-cell with-dext">
+                                    <div class="time-input-wrapper">
+                                        <input type="number" id="timeValidationWith" min="0" max="60" step="0.5" value="1">
+                                        <span class="time-unit">min</span>
+                                    </div>
+                                    <span class="dext-note">Auto ABN lookup, duplicates</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="step-cell">
+                                    <strong>Review</strong>
+                                    <span class="step-description">Business review of invoice details</span>
+                                </td>
+                                <td class="time-cell">
+                                    <div class="time-input-wrapper">
+                                        <input type="number" id="timeReviewWithout" min="0" max="60" step="0.5" value="7">
+                                        <span class="time-unit">min</span>
+                                    </div>
+                                </td>
+                                <td class="time-cell with-dext">
+                                    <div class="time-input-wrapper">
+                                        <input type="number" id="timeReviewWith" min="0" max="60" step="0.5" value="7">
+                                        <span class="time-unit">min</span>
+                                    </div>
+                                    <span class="dext-note">Human review still required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="step-cell">
+                                    <strong>Approval</strong>
+                                    <span class="step-description">Approving invoice for payment</span>
+                                </td>
+                                <td class="time-cell">
+                                    <div class="time-input-wrapper">
+                                        <input type="number" id="timeApprovalWithout" min="0" max="60" step="0.5" value="5">
+                                        <span class="time-unit">min</span>
+                                    </div>
+                                </td>
+                                <td class="time-cell with-dext">
+                                    <div class="time-input-wrapper">
+                                        <input type="number" id="timeApprovalWith" min="0" max="60" step="0.5" value="3">
+                                        <span class="time-unit">min</span>
+                                    </div>
+                                    <span class="dext-note">Streamlined workflows</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="totals-row">
+                                <td class="step-cell"><strong>Total per invoice</strong></td>
+                                <td class="time-cell total">
+                                    <span id="totalTimeWithout">21</span> min
+                                </td>
+                                <td class="time-cell with-dext total">
+                                    <span id="totalTimeWith">12</span> min
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <div class="dext-features">
+                        <div class="feature-item">✓ Documents extracted in ~30 seconds</div>
+                        <div class="feature-item">✓ 99% data accuracy</div>
+                        <div class="feature-item">✓ ABN & GST validation</div>
+                        <div class="feature-item">✓ Duplicate detection</div>
+                    </div>
+                </div>
+
+                <!-- ATO Cost Basis -->
+                <div class="input-group ato-basis">
+                    <h2 class="section-title">
+                        <span class="section-icon">💰</span>
+                        ATO Cost Basis
+                    </h2>
+                    <div class="ato-formula">
+                        <p class="info-text">Cost calculation based on ATO methodology (60% AP portion of total invoice cost):</p>
+                        <div class="formula-display">
+                            <div class="formula-item">
+                                <span class="formula-label">ATO Total Cost (PDF):</span>
+                                <span class="formula-value">$27.67</span>
+                            </div>
+                            <div class="formula-item">
+                                <span class="formula-label">AP Portion (60%):</span>
+                                <span class="formula-value" id="apBaseCost">$16.60</span>
+                            </div>
+                            <div class="formula-item highlight">
+                                <span class="formula-label">With Dext (<span id="timeRatioDisplay">12/21</span>):</span>
+                                <span class="formula-value" id="dextCostPerInvoice">$9.49</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Panel -->
+            <section class="results-panel">
+                <div class="results-header">
+                    <h2>Your Potential Savings</h2>
+                    <p>Based on ATO invoice processing cost methodology (60% AP)</p>
+                </div>
+
+                <!-- Total Invoices Processed -->
+                <div class="results-section">
+                    <table class="results-table highlight-table">
+                        <thead>
+                            <tr>
+                                <th class="label-column">Total Invoices Processed</th>
+                                <th class="value-column">Monthly</th>
+                                <th class="value-column accent">Annually</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Invoices</td>
+                                <td id="totalDocsMonthly">2,000</td>
+                                <td class="accent" id="totalDocsAnnually">24,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Time Savings Section -->
+                <div class="results-section">
+                    <h3 class="section-heading">⏱️ Time Savings</h3>
+                    <table class="results-table four-columns">
+                        <thead>
+                            <tr>
+                                <th class="label-column"></th>
+                                <th class="value-column">Without Dext</th>
+                                <th class="value-column">With Dext</th>
+                                <th class="value-column accent">Time Saved</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Time per invoice</td>
+                                <td id="timePerInvoiceWithout">21 min</td>
+                                <td id="timePerInvoiceWith">12 min</td>
+                                <td class="accent" id="timeSavedPerInvoice">9 min</td>
+                            </tr>
+                            <tr>
+                                <td>Monthly processing time</td>
+                                <td id="totalTimeWithoutResult">700 hrs</td>
+                                <td id="totalTimeWithResult">400 hrs</td>
+                                <td class="accent" id="timeSavedMonthly">300 hrs</td>
+                            </tr>
+                            <tr>
+                                <td>Annual processing time</td>
+                                <td id="totalTimeWithoutAnnual">8,400 hrs</td>
+                                <td id="totalTimeWithAnnual">4,800 hrs</td>
+                                <td class="accent" id="timeSavedAnnually">3,600 hrs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Cost Savings Section -->
+                <div class="results-section">
+                    <h3 class="section-heading">💰 Cost Savings</h3>
+                    <table class="results-table four-columns">
+                        <thead>
+                            <tr>
+                                <th class="label-column"></th>
+                                <th class="value-column">Without Dext</th>
+                                <th class="value-column">With Dext</th>
+                                <th class="value-column accent">Cost Saved</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cost per invoice</td>
+                                <td id="costPerInvoiceWithoutDisplay">$16.60</td>
+                                <td id="costPerInvoiceWithDisplay">$9.49</td>
+                                <td class="accent" id="costSavedPerInvoice">$7.11</td>
+                            </tr>
+                            <tr>
+                                <td>Monthly processing cost</td>
+                                <td id="costWithout">$33,200</td>
+                                <td id="costWith">$18,980</td>
+                                <td class="accent" id="costSavingsMonthly">$14,220</td>
+                            </tr>
+                            <tr>
+                                <td>Annual processing cost</td>
+                                <td id="costWithoutAnnually">$398,400</td>
+                                <td id="costWithAnnually">$227,760</td>
+                                <td class="accent" id="costSavingsAnnually">$170,640</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <!-- Dext Subscription & Net Savings -->
+                    <div class="net-savings-box">
+                        <div class="subscription-row">
+                            <span class="label">Less: Dext subscription</span>
+                            <span class="value"><span id="dextCostMonthly">$200</span>/month (<span id="dextCostAnnually">$2,400</span>/year)</span>
+                        </div>
+                        <div class="net-savings-row">
+                            <span class="label">Net Annual Savings</span>
+                            <span class="value" id="annualSavings">$168,240</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROI Summary -->
+                <div class="roi-summary">
+                    <div class="roi-item">
+                        <span class="roi-label">Estimated Annual ROI</span>
+                        <span class="roi-value" id="roiPercent">7015%</span>
+                    </div>
+                    <div class="roi-item">
+                        <span class="roi-label">Payback Period</span>
+                        <span class="roi-value" id="paybackPeriod">0 days</span>
+                    </div>
+                </div>
+
+                <!-- ATO Reference -->
+                <div class="ato-reference">
+                    <div class="reference-icon">📋</div>
+                    <div class="reference-content">
+                        <strong>ATO Methodology</strong>
+                        <p>Total cost $27.67 × 60% AP = $16.60 | Dext cost = $16.60 × (time ratio)</p>
+                        <a href="https://www.ato.gov.au/businesses-and-organisations/einvoicing/value-assessment-report/cost-calculations" target="_blank" rel="noopener">View ATO methodology →</a>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="results-actions">
+                    <button class="btn btn-primary" onclick="window.print()">
+                        <span class="btn-icon">🖨️</span>
+                        Print Report
+                    </button>
+                    <button class="btn btn-secondary" onclick="generatePDF()">
+                        <span class="btn-icon">📄</span>
+                        Download PDF
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Print-only Report Section -->
+        <section class="print-report">
+            <div class="report-header">
+                <div class="report-logo">Dext</div>
+                <div class="report-title">ROI Value Assessment Report</div>
+                <div class="report-date" id="reportDate"></div>
+            </div>
+            
+            <div class="report-section">
+                <h3>Practice Profile</h3>
+                <table class="report-table">
+                    <tr>
+                        <td>Number of Clients</td>
+                        <td id="reportClients">50</td>
+                    </tr>
+                    <tr>
+                        <td>Invoices per Client/Month</td>
+                        <td id="reportInvoices">40</td>
+                    </tr>
+                    <tr>
+                        <td>Time Reduction with Dext</td>
+                        <td id="reportTimeReduction">~43%</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="report-section">
+                <h3>Time & Cost Savings</h3>
+                <table class="report-table">
+                    <tr>
+                        <td>Total Invoices (Monthly)</td>
+                        <td id="reportDocsMonthly">2,000</td>
+                    </tr>
+                    <tr>
+                        <td>Processing Time Without Dext</td>
+                        <td id="reportTimeWithout">700 hrs</td>
+                    </tr>
+                    <tr>
+                        <td>Processing Time With Dext</td>
+                        <td id="reportTimeWith">400 hrs</td>
+                    </tr>
+                    <tr>
+                        <td>Monthly Hours Saved</td>
+                        <td id="reportTimeSaved">300 hrs</td>
+                    </tr>
+                    <tr>
+                        <td>Annual Cost Savings</td>
+                        <td id="reportAnnualSavings">$168,240</td>
+                    </tr>
+                    <tr>
+                        <td>Dext Subscription (Annual)</td>
+                        <td id="reportErrorSavings">$2,400</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="report-section roi-section">
+                <h3>Return on Investment</h3>
+                <div class="report-roi">
+                    <div class="roi-box">
+                        <span class="roi-box-label">Estimated Annual ROI</span>
+                        <span class="roi-box-value" id="reportROI">485%</span>
+                    </div>
+                    <div class="roi-box">
+                        <span class="roi-box-label">Payback Period</span>
+                        <span class="roi-box-value" id="reportPayback">2.5 months</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="report-footer">
+                <p>Calculations based on ATO eInvoicing Value Assessment methodology</p>
+                <p>ATO cost $27.67 × 60% AP portion = $16.60 per invoice | With Dext proportional to time</p>
+                <p class="disclaimer">This assessment provides estimates only. Actual savings may vary based on individual circumstances.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by <strong>Dext</strong> • Calculations based on <a href="https://www.ato.gov.au/businesses-and-organisations/einvoicing/value-assessment-report/cost-calculations" target="_blank">ATO Value Assessment methodology</a></p>
+        </footer>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
