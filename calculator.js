@@ -139,7 +139,7 @@ const elements = {
 // Dext Pricing
 // ========================================
 const DEXT_PRICING = {
-    perClientPerMonth: 4.00,
+    perClientPerMonth: 33.00,  // $33 per client per month
     volumeDiscount: {
         tier1: { clients: 50, discount: 0 },
         tier2: { clients: 100, discount: 0.10 },

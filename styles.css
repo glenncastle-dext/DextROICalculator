@@ -1181,17 +1181,19 @@ body {
 @media print {
     @page {
         size: A4;
-        margin: 1.5cm;
+        margin: 2.5cm 2cm;
     }
 
     body {
         background: white;
         font-size: 11pt;
+        padding: 0;
+        margin: 0;
     }
 
     .container {
         max-width: 100%;
-        padding: 0;
+        padding: 1cm;
     }
 
     .header,
