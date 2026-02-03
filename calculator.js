@@ -48,8 +48,8 @@ const DEFAULT_TIMES = {
 // ========================================
 let calculatorState = {
     // Volume inputs
-    numClients: 50,
-    invoicesPerClient: 40,
+    numClients: 10,
+    invoicesPerClient: 30,
     
     // Time per invoice - Without Dext (minutes)
     timeReceiptWithout: DEFAULT_TIMES.without.receipt,

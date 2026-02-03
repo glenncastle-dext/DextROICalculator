@@ -87,7 +87,6 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.625rem;
     text-decoration: none;
 }
 
@@ -95,19 +94,25 @@ body {
     opacity: 0.9;
 }
 
-svg.logo-icon {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    flex-shrink: 0;
-    vertical-align: middle;
+.logo-brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
 }
 
-.logo-text {
-    font-size: 2rem;
+.logo-dext {
+    font-size: 2.5rem;
     font-weight: 800;
-    color: var(--dext-dark);
-    letter-spacing: -0.02em;
+    color: #FF6B35;
+    letter-spacing: -0.03em;
+}
+
+.logo-iris {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #FF6B35;
+    letter-spacing: 0.02em;
+    margin-top: 2px;
 }
 
 .header-badge {
@@ -1250,32 +1255,36 @@ svg.logo-icon {
     .report-logo-container {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
-    }
-
-    .report-logo-svg {
-        width: 40px;
-        height: 40px;
+        gap: 1.5rem;
     }
 
     .report-brand {
         display: flex;
         flex-direction: column;
-    }
-
-    .report-logo-text {
-        font-size: 1.75rem;
-        font-weight: 800;
-        color: #1A1A1A;
         line-height: 1;
     }
 
+    .report-logo-text {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #FF6B35;
+        letter-spacing: -0.03em;
+    }
+
+    .report-logo-iris {
+        font-size: 0.625rem;
+        font-weight: 600;
+        color: #FF6B35;
+        letter-spacing: 0.02em;
+        margin-top: 2px;
+    }
+
     .report-tagline {
-        font-size: 0.75rem;
-        font-weight: 500;
-        color: #6B6B6B;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #4A4A4A;
+        padding-left: 1.5rem;
+        border-left: 2px solid #E5E5E5;
     }
 
     .report-date-box {

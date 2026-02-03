@@ -14,13 +14,10 @@
         <!-- Header -->
         <header class="header">
             <a href="https://dext.com" target="_blank" rel="noopener" class="logo">
-                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect width="32" height="32" rx="6" fill="#FF6B35"/>
-                    <rect x="7" y="7" width="4" height="12" rx="1" fill="white"/>
-                    <rect x="13" y="7" width="4" height="12" rx="1" fill="white"/>
-                    <rect x="7" y="21" width="10" height="4" rx="1" fill="white"/>
-                </svg>
-                <span class="logo-text">Dext</span>
+                <div class="logo-brand">
+                    <span class="logo-dext">Dext</span>
+                    <span class="logo-iris">By IRIS</span>
+                </div>
             </a>
             <div class="header-badge">Value Assessment Tool</div>
         </header>
@@ -48,9 +45,9 @@
                             <span class="input-hint">Total clients using Dext for invoice processing</span>
                         </label>
                         <div class="slider-container">
-                            <input type="range" id="numClients" min="1" max="500" value="50" class="slider">
+                            <input type="range" id="numClients" min="1" max="500" value="10" class="slider">
                             <div class="input-box">
-                                <input type="number" id="numClientsValue" min="1" max="500" value="50">
+                                <input type="number" id="numClientsValue" min="1" max="500" value="10">
                             </div>
                         </div>
                     </div>
@@ -61,9 +58,9 @@
                             <span class="input-hint">Purchase invoices requiring processing (accounts payable)</span>
                         </label>
                         <div class="slider-container">
-                            <input type="range" id="invoicesPerClient" min="1" max="500" value="40" class="slider">
+                            <input type="range" id="invoicesPerClient" min="1" max="500" value="30" class="slider">
                             <div class="input-box">
-                                <input type="number" id="invoicesPerClientValue" min="1" max="500" value="40">
+                                <input type="number" id="invoicesPerClientValue" min="1" max="500" value="30">
                             </div>
                         </div>
                     </div>
@@ -359,18 +356,11 @@
         <section class="print-report">
             <div class="report-header">
                 <div class="report-logo-container">
-                    <!-- Dext Logo Mark -->
-                    <svg class="report-logo-svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="48" height="48" rx="8" fill="#FF6B35"/>
-                        <path d="M12 14h6v20h-6V14z" fill="white"/>
-                        <path d="M22 14h6v20h-6V14z" fill="white"/>
-                        <path d="M12 10h16v4H12v-4z" fill="white"/>
-                        <path d="M12 34h16v4H12v-4z" fill="white"/>
-                    </svg>
                     <div class="report-brand">
                         <span class="report-logo-text">Dext</span>
-                        <span class="report-tagline">Value Assessment Report</span>
+                        <span class="report-logo-iris">By IRIS</span>
                     </div>
+                    <span class="report-tagline">Value Assessment Report</span>
                 </div>
                 <div class="report-date-box">
                     <span class="report-date-label">Report Date</span>
