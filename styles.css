@@ -94,25 +94,9 @@ body {
     opacity: 0.9;
 }
 
-.logo-brand {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-}
-
-.logo-dext {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #FF6B35;
-    letter-spacing: -0.03em;
-}
-
-.logo-iris {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #FF6B35;
-    letter-spacing: 0.02em;
-    margin-top: 2px;
+.logo-img {
+    height: 48px;
+    width: auto;
 }
 
 .header-badge {
@@ -1258,25 +1242,9 @@ body {
         gap: 1.5rem;
     }
 
-    .report-brand {
-        display: flex;
-        flex-direction: column;
-        line-height: 1;
-    }
-
-    .report-logo-text {
-        font-size: 2rem;
-        font-weight: 800;
-        color: #FF6B35;
-        letter-spacing: -0.03em;
-    }
-
-    .report-logo-iris {
-        font-size: 0.625rem;
-        font-weight: 600;
-        color: #FF6B35;
-        letter-spacing: 0.02em;
-        margin-top: 2px;
+    .report-logo-img {
+        height: 40px;
+        width: auto;
     }
 
     .report-tagline {
