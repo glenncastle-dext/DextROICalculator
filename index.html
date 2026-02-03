@@ -13,11 +13,15 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <div class="logo">
-                <svg width="100" height="40" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <text x="0" y="32" font-family="Plus Jakarta Sans, sans-serif" font-size="36" font-weight="800" fill="#1A1A1A">Dext</text>
+            <a href="https://dext.com" target="_blank" rel="noopener" class="logo">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="6" fill="#FF6B35"/>
+                    <rect x="7" y="7" width="4" height="12" rx="1" fill="white"/>
+                    <rect x="13" y="7" width="4" height="12" rx="1" fill="white"/>
+                    <rect x="7" y="21" width="10" height="4" rx="1" fill="white"/>
                 </svg>
-            </div>
+                <span class="logo-text">Dext</span>
+            </a>
             <div class="header-badge">Value Assessment Tool</div>
         </header>
 
@@ -354,77 +358,119 @@
         <!-- Print-only Report Section -->
         <section class="print-report">
             <div class="report-header">
-                <div class="report-logo">Dext</div>
-                <div class="report-title">ROI Value Assessment Report</div>
-                <div class="report-date" id="reportDate"></div>
+                <div class="report-logo-container">
+                    <!-- Dext Logo Mark -->
+                    <svg class="report-logo-svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="8" fill="#FF6B35"/>
+                        <path d="M12 14h6v20h-6V14z" fill="white"/>
+                        <path d="M22 14h6v20h-6V14z" fill="white"/>
+                        <path d="M12 10h16v4H12v-4z" fill="white"/>
+                        <path d="M12 34h16v4H12v-4z" fill="white"/>
+                    </svg>
+                    <div class="report-brand">
+                        <span class="report-logo-text">Dext</span>
+                        <span class="report-tagline">Value Assessment Report</span>
+                    </div>
+                </div>
+                <div class="report-date-box">
+                    <span class="report-date-label">Report Date</span>
+                    <span class="report-date" id="reportDate"></span>
+                </div>
+            </div>
+
+            <div class="report-hero">
+                <div class="report-hero-stat">
+                    <span class="hero-value" id="reportROI">485%</span>
+                    <span class="hero-label">Estimated Annual ROI</span>
+                </div>
+                <div class="report-hero-stat">
+                    <span class="hero-value" id="reportPayback">2.5 months</span>
+                    <span class="hero-label">Payback Period</span>
+                </div>
+                <div class="report-hero-stat highlight">
+                    <span class="hero-value" id="reportNetSavings">$150,963</span>
+                    <span class="hero-label">Net Annual Savings</span>
+                </div>
             </div>
             
-            <div class="report-section">
-                <h3>Practice Profile</h3>
-                <table class="report-table">
-                    <tr>
-                        <td>Number of Clients</td>
-                        <td id="reportClients">50</td>
-                    </tr>
-                    <tr>
-                        <td>Invoices per Client/Month</td>
-                        <td id="reportInvoices">40</td>
-                    </tr>
-                    <tr>
-                        <td>Time Reduction with Dext</td>
-                        <td id="reportTimeReduction">~43%</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="report-section">
-                <h3>Time & Cost Savings</h3>
-                <table class="report-table">
-                    <tr>
-                        <td>Total Invoices (Monthly)</td>
-                        <td id="reportDocsMonthly">2,000</td>
-                    </tr>
-                    <tr>
-                        <td>Processing Time Without Dext</td>
-                        <td id="reportTimeWithout">700 hrs</td>
-                    </tr>
-                    <tr>
-                        <td>Processing Time With Dext</td>
-                        <td id="reportTimeWith">400 hrs</td>
-                    </tr>
-                    <tr>
-                        <td>Monthly Hours Saved</td>
-                        <td id="reportTimeSaved">300 hrs</td>
-                    </tr>
-                    <tr>
-                        <td>Annual Cost Savings</td>
-                        <td id="reportAnnualSavings">$168,240</td>
-                    </tr>
-                    <tr>
-                        <td>Dext Subscription (Annual)</td>
-                        <td id="reportErrorSavings">$2,400</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="report-section roi-section">
-                <h3>Return on Investment</h3>
-                <div class="report-roi">
-                    <div class="roi-box">
-                        <span class="roi-box-label">Estimated Annual ROI</span>
-                        <span class="roi-box-value" id="reportROI">485%</span>
+            <div class="report-content">
+                <div class="report-column">
+                    <div class="report-section">
+                        <h3>Practice Profile</h3>
+                        <table class="report-table">
+                            <tr>
+                                <td>Number of Clients</td>
+                                <td id="reportClients">50</td>
+                            </tr>
+                            <tr>
+                                <td>Invoices per Client/Month</td>
+                                <td id="reportInvoices">40</td>
+                            </tr>
+                            <tr>
+                                <td>Time Reduction with Dext</td>
+                                <td id="reportTimeReduction">~43%</td>
+                            </tr>
+                        </table>
                     </div>
-                    <div class="roi-box">
-                        <span class="roi-box-label">Payback Period</span>
-                        <span class="roi-box-value" id="reportPayback">2.5 months</span>
+
+                    <div class="report-section">
+                        <h3>Processing Volume</h3>
+                        <table class="report-table">
+                            <tr>
+                                <td>Total Invoices (Monthly)</td>
+                                <td id="reportDocsMonthly">2,000</td>
+                            </tr>
+                            <tr>
+                                <td>Total Invoices (Annually)</td>
+                                <td id="reportDocsAnnually">24,000</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="report-column">
+                    <div class="report-section">
+                        <h3>Time Savings</h3>
+                        <table class="report-table">
+                            <tr>
+                                <td>Processing Time Without Dext</td>
+                                <td id="reportTimeWithout">700 hrs</td>
+                            </tr>
+                            <tr>
+                                <td>Processing Time With Dext</td>
+                                <td id="reportTimeWith">400 hrs</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Monthly Hours Saved</td>
+                                <td id="reportTimeSaved">300 hrs</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="report-section">
+                        <h3>Cost Analysis</h3>
+                        <table class="report-table">
+                            <tr>
+                                <td>Annual Cost Savings</td>
+                                <td id="reportAnnualSavings">$168,240</td>
+                            </tr>
+                            <tr>
+                                <td>Dext Subscription (Annual)</td>
+                                <td id="reportErrorSavings">$2,400</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
 
             <div class="report-footer">
-                <p>Calculations based on ATO eInvoicing Value Assessment methodology</p>
-                <p>ATO cost $27.67 × 60% AP portion = $16.60 per invoice | With Dext proportional to time</p>
-                <p class="disclaimer">This assessment provides estimates only. Actual savings may vary based on individual circumstances.</p>
+                <div class="report-footer-left">
+                    <p><strong>Methodology:</strong> Based on ATO eInvoicing Value Assessment</p>
+                    <p>ATO cost $27.67 × 60% AP portion = $16.60 per invoice</p>
+                </div>
+                <div class="report-footer-right">
+                    <p class="disclaimer">This assessment provides estimates only.<br>Actual savings may vary based on individual circumstances.</p>
+                </div>
             </div>
         </section>
 

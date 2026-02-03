@@ -126,13 +126,15 @@ const elements = {
     reportInvoices: document.getElementById('reportInvoices'),
     reportTimeReduction: document.getElementById('reportTimeReduction'),
     reportDocsMonthly: document.getElementById('reportDocsMonthly'),
+    reportDocsAnnually: document.getElementById('reportDocsAnnually'),
     reportTimeWithout: document.getElementById('reportTimeWithout'),
     reportTimeWith: document.getElementById('reportTimeWith'),
     reportTimeSaved: document.getElementById('reportTimeSaved'),
     reportAnnualSavings: document.getElementById('reportAnnualSavings'),
     reportErrorSavings: document.getElementById('reportErrorSavings'),
     reportROI: document.getElementById('reportROI'),
-    reportPayback: document.getElementById('reportPayback')
+    reportPayback: document.getElementById('reportPayback'),
+    reportNetSavings: document.getElementById('reportNetSavings')
 };
 
 // ========================================
@@ -515,15 +517,23 @@ function updatePrintReport(results) {
     if (elements.reportInvoices) elements.reportInvoices.textContent = state.invoicesPerClient;
     if (elements.reportTimeReduction) elements.reportTimeReduction.textContent = formatPercent(results.timeReductionPercent);
     
-    // Calculated savings
+    // Processing volume
     if (elements.reportDocsMonthly) elements.reportDocsMonthly.textContent = formatNumber(results.totalInvoicesMonthly);
+    if (elements.reportDocsAnnually) elements.reportDocsAnnually.textContent = formatNumber(results.totalInvoicesAnnually);
+    
+    // Time savings
     if (elements.reportTimeWithout) elements.reportTimeWithout.textContent = formatHours(results.totalHoursWithoutMonthly);
     if (elements.reportTimeWith) elements.reportTimeWith.textContent = formatHours(results.totalHoursWithMonthly);
     if (elements.reportTimeSaved) elements.reportTimeSaved.textContent = formatHours(results.hoursSavedMonthly);
-    if (elements.reportAnnualSavings) elements.reportAnnualSavings.textContent = formatCurrency(results.netSavingsAnnually);
+    
+    // Cost analysis
+    if (elements.reportAnnualSavings) elements.reportAnnualSavings.textContent = formatCurrency(results.costSavingsAnnually);
     if (elements.reportErrorSavings) elements.reportErrorSavings.textContent = formatCurrency(results.dextAnnualCost);
+    
+    // Hero stats - ROI
     if (elements.reportROI) elements.reportROI.textContent = formatPercent(results.roiPercent);
     if (elements.reportPayback) elements.reportPayback.textContent = formatPayback(results.paybackMonths);
+    if (elements.reportNetSavings) elements.reportNetSavings.textContent = formatCurrency(results.netSavingsAnnually);
 }
 
 // ========================================
